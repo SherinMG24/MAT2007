@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[numbers]{natbib} % for numeric references
+\usepackage{float}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{pra 2007-Bibliography.bib}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=3cm]{figures/MSP-logo.jpg} 
+        \vspace{1cm}
+        
+        \textbf{\LARGE Global Life expectancy:}\\
+        \textbf{\LARGE Progress and Inequality}
+        
+        \vspace{1.5cm}
+        
+        \textbf{\Large Sherin Gelbert (ID 6378000)}
+        
+        \vfill
+        
+        \large Date: \today
+        
+    \end{center}
+\end{titlepage}
+
+\newpage
+
+\section*{Introduction}
+%Brief introduction about the topic, phrase the scientific question and place it in a broader context
+Across the world, people are experiencing increased life expectancy. In 1900, the global average life expectancy was 32 years. By 2023, this number had more than doubled to 73 years \cite{anon2024World}.
+Significant progress has been made worldwide, with life expectancy more than twice as high in every region. This was not solely due to falling child mortality rates; people began living longer at all ages.
+
+Life expectancy is defined as the statistical average number of years a person is expected to live, based on current age-specific death rates\cite{anonIndicator}. In other words, it shows the expected lifespan of a baby born in a given year, assuming it experiences the same change of dying at every age as the individuals living in that year. A variety of factors influence this, including access to healthcare, lifestyle habits such as diet, smoking, or drinking, and socio-economic status. 
+The analysis drew on data from the United Nations World Population Prospects \cite{anon2024World}, which enabled the investigation of two research questions. How is the average life expectancy of each continent developing over time?
+Has the global gap in life expectancy between countries decreased or increased from 1950 to 2023?
+
+
+In order to proceed, it is first necessary to assess the scale and pace of progress. It establishes whether different continents have experienced improvements in longevity and identifies regions where progress has been slower.
+The focus then shifts from the average progress to its distribution. Despite the potential for an increase in global life expectancy, this does not necessarily guarantee an improvement in global equality. 
+The analysis demonstrates a comprehensive interconnection between demographic change and its implications for public policy, social justice, and international development. Furthermore, they illustrate the necessity for cautious interpretation of averages, emphasising that improvements in a regional average do not necessarily indicate equal benefits for all countries or social groups.
+
+It is interesting to note that even after World War II, there have been significant declines in life expectancy. Examples of this include the Great Leap Forward famine in China, the HIV/AIDS epidemic in sub-Saharan Africa, the Rwandan genocide, and the COVD-19 pandemic. It should be noted that these global events are also reflected in the dataset. 
+\section*{Data sample}
+
+This data package contains the data that is used to generate the chart ["Life expectancy"]\cite{Our2019Life} on the Our World in Data website. The document was last updated on 22 October 2025 and downloaded on 3 September 2026. The data package is sourced from the United Nations World Population Prospects (2024).
+The downloaded CSV file is structured into four columns. 
+The first two columns in the CSV file are labelled "Entity" and "Code". The term 'entity' refers to the entity in question (e.g. 'United States'). The term 'code' refers to the OWID internal entity code, which is used in the event that the entity concerned is a country or region. For the majority of countries, this is equivalent to the ISO alpha-3 code of the entity (e.g. "USA"). For non-standard countries, such as historical countries, these are custom codes.
+The third column is either "Year" or "Day". If the data is annual, this is designated as "Year" and contains only the year as an integer. If the column is designated as "Day", it will contain a date string in the format "YYYY-MM-DD". The final column is the data column, which contains the life expectancy information. 
+For the purposes of this analysis, the data from 1950 onwards has been used, since data points from the years prior to 1950 are incomplete. It should be noted that the regional data is also excluded, since the analysis was conducted on only 195 official countries. 
+
+\section*{Results and discussion}
+The initial plot illustrates the years on the x-axis and the life expectancy on the y-axis. The line illustrates the mean average across all of that continent. The shaded region indicates the standard deviation, which quantifies the range in life expectancy across the continent.
+An analysis of the initial plot reveals an increase in life expectancy across all continents, though the extent of this increase varies. Furthermore, the decline in events observed after 2020 is consistent with the global impact of the COVD-19 pandemic. It is also pertinent to consider events of a smaller scale, such as the Cambodian crisis. The increase in the standard deviation in the mid-1970s is indicative of a sudden and significant decrease in life expectancy, from 40 years to 13 years in Cambodia\cite{Heuveline2015The}. Furthermore, analysis of the mean age indicates a reduction in the overall discrepancy between the age ranges, which is then utilised as a foundation for the second plot, which focuses on the disparity, i.e. the difference, between the continents. 
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/average_life_expectancy_shaded.png}
+    \caption{Average Life Expectancy y Contintent, 1950 - 2023}
+    \label{avergae_life_expectancy_continent}
+\end{figure}
+
+The second plot displays the global average of life expectancy in red, with the line representing the mean and the shaded area showing the spread of life expectancy on a global scale. The global gap in years is displayed in blue. This is calculated by taking the difference between the maximum and minimum life expectancies for the same year. It is evident that the gap demonstrates significant variation, attributable to the impact of outliers. Therefore, it is not possible to illustrate an overall trend and the reliability of the information is reduced. However, when the red average is considered, it becomes evident that the discrepancy is diminishing as the shaded area is reducing. This suggests that the global variation in life expectancy is declining. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/global_Veriation_Gap.png}
+    \caption{Global Gap and life expectancy, 1950 - 2023}
+    \label{global_gap_life_expectancy}
+\end{figure}
+
+In summary, the data indicates a decline in both life expectancy and the gap over time. This is due to the implementation of measures by countries to increase their life expectancy. Furthermore, the analysis provides a comprehensive overview of the overall health, wealth, and functional quality of society.
+
+\printbibliography
+
+\end{document}
